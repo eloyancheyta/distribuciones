@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<header class="container theme  hide-small hide-medium center"><h1>Distribuciones de Probabilidad</h1></header>
+
+<div class="container row">
+  <section class=" container content left half">
+    <div class="card-4 round-large margin padding ">
+      <h2>Selecciona una Distribución de probabilidad</h2>
+
+      <select id="tipo" class="select border " name="distribucion" onchange="verForm();">
+        <option value="" disabled selected>Distribuciones</option>
+        <option value="Poisson">Poisson</option>
+        <option value="Binomial">Binomial</option>
+        <option value="BinomialNegativa">Binomial Negativa</option>
+        <option value="Normal">Normal</option>
+        <option value="Exponencial">Exponencial</option>
+      </select>
+    </div>
+
+  <div id="form" class="container card-4 roud   padding oculto">
+      <div class="container theme">
+        <h2 id="titulo-distribucion">Ingresa los Parámetros</h2>
+      </div>
+      <form  class="container " >         
+        <div class="row-padding">
+          <div id="l_div" class="third oculto">
+            <label>Lambda </label>
+            <input  id="l" class="input border " type="number" placeholder="0">
+          </div>
+          <div id="n_div" class="third oculto">
+            <label>Ensayos</label>
+            <input id="n" class="input border "  type="number" placeholder="0">
+          </div>
+          <div  id="p_div" class="third oculto">
+            <label>Probabilidad de éxito</label>
+            <input id="p" class="input border "  type="number" placeholder="0">
+          </div>
+          <div id="loc_div" class="third oculto">
+            <label>Promedio</label>
+            <input id="loc" class="input border"  type="number" placeholder="0">
+          </div>
+          <div id="scale_div" class="third oculto">
+            <label>Desviación</label>
+            <input id="scale" class="input border"  type="number" placeholder="0">
+          </div>
+          <div class="third">
+            <label>Tamaño de la muestra</label>
+            <input id="cardinality" class="input border "  type="number" placeholder="0">
+          </div>
+        </div>
+        <button class="btn theme margin right" onclick="calcular(event);">Calcular</button></p>
+      </form>
+  </div>
+
+ </section>
+
+<section id="resultados" class=" card-4 roud half right padding margin-top oculto">
+  <h2 class="text-theme">Resultados</h2>
+  <div id="img" class="container">
+    
+  </div>
+  <div  class="container">   
+    <textarea id="numeros"name="review" rows="20" cols="70">
+  </textarea>   
+  </div>  
+</section>
+
+</div>
+
+{% endblock %}
